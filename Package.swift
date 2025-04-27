@@ -4,36 +4,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "VariadicBox",
+    name: "HeterogeneousBoxPackage",
     platforms: [
         .macOS(.v14),
-        .iOS(.v15)
+        .iOS(.v15),
     ],
     products: [
         .library(
-            name: "VariadicBox",
-            targets: ["VariadicBox"]
-        ),
-        .executable(
-            name: "VariadicBoxClient",
-            targets: ["VariadicBoxClient"]
+            name: "HeterogeneousBox",
+            targets: ["HeterogeneousBox"]
         )
     ],
     targets: [
         .target(
-            name: "VariadicBox"
-        ),
-        .executableTarget(
-            name: "VariadicBoxClient",
-            dependencies: [
-                "VariadicBox"
-            ]
-        ),
-        .testTarget(
-            name: "VariadicBoxTests",
-            dependencies: [
-                "VariadicBox"
-            ]
+            name: "HeterogeneousBox"
         )
     ],
     swiftLanguageVersions: [.v5]
