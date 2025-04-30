@@ -1,6 +1,5 @@
 import Foundation
 
-@available(SwiftStdlib 5.9, *)
 @dynamicMemberLookup
 public struct HeterogeneousBox<each Value> {
     public private(set) var value: (repeat each Value)
@@ -88,7 +87,12 @@ public struct HeterogeneousBox<each Value> {
     }
     
     public var nonNilValues: [Any] {
-        array.compactMap { $0 }
+        array.compactMap { value in
+            if let optional = value as? OptionalType, optional.isNil {
+                return nil
+            }
+            return value
+        }
     }
     
     public func dump() {
@@ -110,4 +114,12 @@ public struct HeterogeneousBox<each Value> {
     ) -> HeterogeneousBox<(repeat each Value, repeat each T)> {
         HeterogeneousBox<(repeat each Value, repeat each T)>.init((repeat each value, repeat each values))
     }
+}
+
+private protocol OptionalType {
+    var isNil: Bool { get }
+}
+
+extension Optional: OptionalType {
+    var isNil: Bool { self == nil }
 }

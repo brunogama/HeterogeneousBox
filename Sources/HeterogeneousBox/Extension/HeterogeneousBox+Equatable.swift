@@ -1,13 +1,24 @@
 import Foundation
 
-extension HeterogeneousBox: Equatable where repeat each Value: Equatable {
+extension HeterogeneousBox: Equatable
+where repeat each Value: Equatable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
-        var areEqual = true
-        func checkEquality<T: Equatable>(_ lhs: T, _ rhs: T) {
-            lhs == rhs ? () : (areEqual = false)
+        func checkEquality<LT: Equatable, RT: Equatable>(_ leftValue: LT, _ rightValue: RT) throws {
+            
+            guard type(of: leftValue) == type(of: rightValue),
+                  leftValue == rightValue as! LT
+            else {
+                throw NSError(domain: "Type mismatch or values not equal", code: 0, userInfo: nil)
+            }
+            print("Comparing \(leftValue) and \(rightValue)")
+            
         }
-        repeat checkEquality(each lhs.value, each rhs.value)
-        return areEqual
+        do {
+            repeat try checkEquality(each lhs.value, each rhs.value)
+            return true
+        } catch {
+            return false
+        }
     }
     
     public func contains<T>(
@@ -16,4 +27,5 @@ extension HeterogeneousBox: Equatable where repeat each Value: Equatable {
         array.contains(where: { $0 as? T == value })
     }
 }
+
 

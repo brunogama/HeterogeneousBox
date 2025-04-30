@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:HeterogeneousBox}",
+            "name": "Debug HeterogeneousBoxClient",
+            "program": "${workspaceFolder:HeterogeneousBox}/.build/debug/HeterogeneousBoxClient",
+            "preLaunchTask": "swift: Build Debug HeterogeneousBoxClient"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:HeterogeneousBox}",
+            "name": "Release HeterogeneousBoxClient",
+            "program": "${workspaceFolder:HeterogeneousBox}/.build/release/HeterogeneousBoxClient",
+            "preLaunchTask": "swift: Build Release HeterogeneousBoxClient"
+        }
+    ]
+}

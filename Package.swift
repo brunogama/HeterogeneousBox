@@ -16,9 +16,17 @@ let package = Package(
         )
     ],
     targets: [
+        .executableTarget(
+            name: "HeterogeneousBoxClient",
+            dependencies: ["HeterogeneousBox"]
+        ),
         .target(
             name: "HeterogeneousBox"
-        )
+        ),
+        .testTarget(
+            name: "HeterogeneousBoxTests",
+            dependencies: ["HeterogeneousBox"]
+        ),
     ],
     swiftLanguageVersions: [.v5]
 )
