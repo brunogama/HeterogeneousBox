@@ -12,7 +12,7 @@ To add HeterogeneousBox to your Swift project using Swift Package Manager, decla
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/brunogama/HeterogeneousBox.git", .exact("1.0.7"))
+    .package(url: "https://github.com/brunogama/HeterogeneousBox.git", .exact("1.0.8"))
 ],
 targets: [
     .target(
@@ -27,5 +27,5 @@ Then, execute `swift package resolve` in your terminal.
 Alternatively, you can add the package dependency via Xcode:
 1. Navigate to File > Add Packages...
 2. Enter the repository URL: `https://github.com/brunogama/HeterogeneousBox.git`
-3. Set the "Dependency Rule" to "Exact Version" and input `1.0.7`.
+3. Set the "Dependency Rule" to "Exact Version" and input `1.0.8`.
 4. Click "Add Package".
