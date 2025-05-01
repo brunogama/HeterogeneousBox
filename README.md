@@ -7,7 +7,7 @@
 # HeterogeneousBox
 
 ![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)
-![Platform](https://img.shields.io/badge/platforms-iOS%20|%20macOS%20|%20watchOS%20|%20tvOS-lightgrey.svg)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fbrunogama%2FHeterogeneousBox%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/brunogama/HeterogeneousBox)[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fbrunogama%2FHeterogeneousBox%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/brunogama/HeterogeneousBox)
 
 A Swift package implementing a type-erased container for variadic parameters, enabling the creation of heterogeneous collections while preserving type information. This experiment leverages Swift Parameter Packs, a powerful feature introduced in Swift 5.9.
 
